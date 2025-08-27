@@ -1,21 +1,8 @@
 import React, { useState } from 'react';
+import FilterSection from '../../components/forms/FilterSection';
+import Checkbox from '../../components/forms/Checkbox';
 
 // --- Reusable Components ---
-
-const FilterSection = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <div className="mb-6">
-    <h3 className="font-semibold mb-2">{title}</h3>
-    <div className="space-y-2">{children}</div>
-  </div>
-);
-
-const Checkbox = ({ label, count }: { label: string; count?: number }) => (
-  <label className="flex items-center space-x-2 cursor-pointer">
-    <input type="checkbox" className="rounded" />
-    <span className="text-sm">{label}</span>
-    {count !== undefined && <span className="text-xs text-muted-foreground">({count})</span>}
-  </label>
-);
 
 const CollapsibleSection = ({ title, count, children }: { title: string; count: number; children?: React.ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
